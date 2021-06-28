@@ -1,0 +1,4 @@
+--- # basic greeting
+- model: notes.note
+  fields:
+    message: hello, world!

@@ -1,0 +1,16 @@
+{% if note_list %}
+<ul>
+    {% for note in note_list %}
+    <li>
+        {{ note.message }}
+        <span><a href="{% url 'notes:update' note.id %}">edit</a></span>
+        <span><a href="{% url 'notes:delete' note.id %}">delete</a></span>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>You haven't written any notes!</p>
+{% endif %}
+<a href="{% url 'notes:create' %}">Write something new</a>
+<br>
+<p>~~~~~~~~~~</p>
